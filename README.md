@@ -32,13 +32,21 @@ $ go get -u github.com/golang/protobuf/protoc-gen-go
 
 ## Compile
 
-* compile
+* compile helloworld
 
 ```bash
 $ protoc -I helloworld/ helloworld/helloworld.proto --go_out=plugins=grpc:helloworld
 ```
 
+* compile book
+
+```bash
+$ protoc -I proto/book/ proto/book/book.proto --go_out=plugins=grpc:proto/book
+```
+
 ## Exec
+
+### hello world
 
 * run server
 
@@ -50,4 +58,18 @@ $ go run greeter_server/main.go
 
 ```bash
 $ go run greeter_client/main.go
+```
+
+### book
+
+* run server
+
+```bash
+$ go run server/book/main.go
+```
+
+* run client
+
+```bash
+$ go run client/book/main.go
 ```

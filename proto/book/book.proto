@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package book;
+
+service BookService {
+    rpc FindBook(FindBookRequest) returns (FindBookResponse);
+}
+
+message FindBookRequest {
+    string keyword = 1;
+}
+
+message FindBookResponse  {
+    Book book = 1;
+}
+
+message Book {
+    int32 id = 1;
+    string title = 2;
+    int32 price = 3;
+}
